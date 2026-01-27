@@ -7,6 +7,7 @@ import Vision from './pages/Vision';
 import WhoWeAre from './pages/WhoWeAre';
 import WhatWeDo from './pages/WhatWeDo';
 import Insights from './pages/Insights';
+import SuccessStories from './pages/SuccessStories';
 function App() {
   return (
     <Router>
@@ -26,6 +27,7 @@ function App() {
             <Route path="/who-we-are-1" element={<WhoWeAre />} />
             <Route path="/what-we-do-1" element={<WhatWeDo />} />
             <Route path="/insights" element={<Insights />} />
+            <Route path="/success-stories" element={<SuccessStories />} />
           </Routes>
         </main>
 
