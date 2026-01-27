@@ -28,17 +28,25 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1f1f1f] text-white px-6 pt-14 pb-10 border-t border-[#2a2a2a]">
+    <footer className="bg-[#1f1f1f] text-white border-t border-[#2a2a2a]">
 
-      {/* 1. Navigation Links */}
-      <div className="max-w-6xl mx-auto mb-16 text-center">
-        <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3">
+      {/* ================= LINKS ================= */}
+      <div className="max-w-6xl mx-auto px-6 pt-14">
+        <ul
+          className="
+            flex flex-col items-center gap-3
+            md:flex-row md:flex-wrap md:justify-center md:gap-x-6 md:gap-y-3
+          "
+        >
           {links.map((link, index) => (
             <li key={index}>
               <Link
                 to={link.path}
-                className="text-[15px] uppercase tracking-[0.14em] text-gray-300 hover:text-white transition"
-                style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
+                className="
+                  uppercase tracking-[0.18em]
+                  text-gray-300 hover:text-white transition
+                  text-[11px] sm:text-[12px]
+                "
               >
                 {link.name}
               </Link>
@@ -47,47 +55,47 @@ export default function Footer() {
         </ul>
       </div>
 
-      {/* 2. Company Info */}
-      <div className="text-center mb-20 space-y-4">
+      {/* ================= COMPANY INFO ================= */}
+      <div className="text-center mt-14 px-6 space-y-4">
 
-        <h2
-          className="text-[12px] font-semibold uppercase tracking-[0.22em]"
-          style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-        >
+        <p className="uppercase tracking-[0.22em] text-[11px]">
           Prodesk IT
-        </h2>
+        </p>
 
-        <p
-          className="text-[12px] uppercase tracking-[0.12em] text-gray-400 max-w-3xl mx-auto leading-relaxed"
-          style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-        >
-          4th Floor, 91springboard building, Plot No. D, 107, Vyapar Marg,
+        <p className="uppercase tracking-[0.14em] text-gray-400 text-[10px] leading-relaxed max-w-3xl mx-auto">
+          4th Floor, 91springboard Building, Plot No. D, 107, Vyapar Marg,
           D Block, Sector 2, Noida, Uttar Pradesh 201301
         </p>
 
-        <p
-          className="text-[12px] tracking-[0.12em] text-gray-400"
-          style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
-        >
-          <a href="tel:8851407750" className="hover:text-white">
+        <p className="tracking-[0.14em] text-gray-400 text-[10px]">
+          <a href="tel:8851407750" className="hover:text-white transition">
             8851407750
           </a>
         </p>
       </div>
 
-      {/* 3. Bottom Bar */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-y-4 text-[11px] tracking-[0.12em] uppercase text-gray-500">
+      {/* ================= BOTTOM BAR ================= */}
+      <div className="mt-16 border-t border-[#2a2a2a]">
+        <div
+          className="
+            max-w-7xl mx-auto px-6 py-6
+            flex flex-col items-center gap-3
+            md:flex-row md:justify-between
+            text-gray-500 uppercase tracking-[0.14em]
+            text-[9px] sm:text-[10px]
+          "
+        >
+          <div className="text-center md:text-left">
+            <p>Copyright © 2026 Prodesk IT</p>
+            <p>All Rights Reserved.</p>
+          </div>
 
-        <div className="text-center md:text-left leading-snug">
-          <p>Copyright © 2026 Prodesk IT</p>
-          <p>All Rights Reserved.</p>
+          <div className="text-center md:text-right">
+            <p>Powered by Net Solutions</p>
+          </div>
         </div>
-
-        <div className="text-center md:text-right">
-          <p>Powered by Net Solutions</p>
-        </div>
-
       </div>
+
     </footer>
   );
 }
