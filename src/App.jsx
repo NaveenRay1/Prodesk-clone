@@ -15,6 +15,10 @@ import CloudDevOps from './pages/technologies/CloudDevOps';
 import ScrollToTop from "./components/ScrollToTop";
 import PythonBackend from './pages/technologies/PythonBackend';
 import ReactFrontend from './pages/technologies/ReactFrontend';
+import MobileTechnologies from './pages/technologies/MobileTechnologies';
+import DataAnalytics from './pages/technologies/DataAnalytics';
+import Iot from './pages/technologies/Iot';
+import CyberSecurity from './pages/technologies/CyberSecurity';
 function App() {
   return (
     
@@ -43,6 +47,10 @@ function App() {
             <Route path="/technologies/cloud-devops" element={<CloudDevOps />} />
             <Route path="/technologies/python-backend" element={<PythonBackend />} />
             <Route path="/technologies/react-frontend" element={<ReactFrontend />} />
+            <Route path="/technologies/mobile-technologies" element={<MobileTechnologies />} />
+            <Route path="/technologies/data-analytics" element={<DataAnalytics />} />
+            <Route path="/technologies/internet-of-things" element={<Iot />} />
+            <Route path="/technologies/cybersecurity" element={<CyberSecurity />} />
           </Routes>
         </main>
 
