@@ -119,7 +119,7 @@ export default function Sidebar() {
           <Link to="/insights">INSIGHTS</Link> 
            <Link to="/success-stories" onClick={closeMobileMenu} className="hover:text-gray-400 uppercase">SUCCESS STORIES</Link>
            <Link to="/careers" onClick={closeMobileMenu} className="hover:text-gray-400 uppercase">CAREERS</Link> 
-            <Link to="#">CONTACT</Link>
+           <Link to="/contact">CONTACT</Link>
           </nav>
 
           <button
@@ -176,9 +176,9 @@ export default function Sidebar() {
           <Link to="/careers" className="block text-gray-400 hover:text-white uppercase transition-colors">
   CAREERS
 </Link>
-          <Link to="#" className="block text-gray-400 hover:text-white">
-            CONTACT
-          </Link>
+         <Link to="/contact" className="block text-gray-400 hover:text-white">
+      CONTACT
+    </Link>
         </nav>
       </div>
 

@@ -9,6 +9,7 @@ import WhatWeDo from './pages/WhatWeDo';
 import Insights from './pages/Insights';
 import SuccessStories from './pages/SuccessStories';
 import Careers from './pages/Careers';
+import Contact from './pages/Contact';
 function App() {
   return (
     <Router>
@@ -30,6 +31,7 @@ function App() {
             <Route path="/insights" element={<Insights />} />
             <Route path="/success-stories" element={<SuccessStories />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
 
