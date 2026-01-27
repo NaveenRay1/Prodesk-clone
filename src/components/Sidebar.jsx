@@ -7,6 +7,8 @@ import {
   Bars3Icon,
 } from "@heroicons/react/24/outline";
 
+/* ================= MENU DATA ================= */
+
 const subMenus = {
   about: [
     { name: "About Us", href: "/about-us-1" },
@@ -15,6 +17,7 @@ const subMenus = {
     { name: "Who We Are", href: "/who-we-are-1" },
     { name: "What We Do", href: "/what-we-do-1" },
   ],
+
   products: [
     { name: "Software Development", href: "#" },
     { name: "Web Development", href: "#" },
@@ -25,20 +28,36 @@ const subMenus = {
     { name: "Cloud Services", href: "#" },
     { name: "Data Analytics", href: "#" },
     { name: "AI & Machine Learning", href: "#" },
+    { name: "Consulting & IT Strategy", href: "#" },
+    { name: "Cybersecurity Services", href: "#" },
+    { name: "Logo Design", href: "#" },
+    { name: "Internet of Things (IoT)", href: "#" },
   ],
+
   technologies: [
     { name: "AI & ML", href: "#" },
     { name: "Cloud Computing & DevOps", href: "#" },
     { name: "Python & Backend", href: "#" },
     { name: "React & Modern Frontend", href: "#" },
     { name: "Mobile Technologies", href: "#" },
+    { name: "Data Analytics", href: "#" },
+    { name: "Internet of Things (IoT)", href: "#" },
+    { name: "Cybersecurity", href: "#" },
     { name: "Java Enterprise Solutions", href: "#" },
     { name: "Blockchain & Web3", href: "#" },
+    { name: "Automated Testing", href: "#" },
+    { name: "Robotic Automation", href: "#" },
+    { name: "Enterprise CRM Solutions", href: "#" },
+    { name: "ERP & Supply Chain", href: "#" },
+    { name: "UI/UX Design Studio", href: "#" },
+    { name: "E-Commerce & Retail", href: "#" },
+    { name: "IT Infrastructure", href: "#" },
+    { name: "Digital Marketing", href: "#" },
     { name: "API Integration", href: "#" },
-    { name: "IoT", href: "#" },
-    { name: "Cybersecurity", href: "#" },
   ],
 };
+
+/* ================= COMPONENT ================= */
 
 export default function Sidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -52,14 +71,14 @@ export default function Sidebar() {
   const toggleMenu = (menu) =>
     setActiveMenu(activeMenu === menu ? null : menu);
 
-  const closeMobileMenu = () => {
+  const closeAll = () => {
     setMobileOpen(false);
     setActiveMenu(null);
   };
 
   return (
     <>
-      {/*                  MOBILE TOP BAR                  */}
+      {/* ================= MOBILE TOP BAR ================= */}
       <div className="lg:hidden fixed top-0 left-0 w-full bg-black text-white z-50 border-b border-gray-800">
         <div className="h-32 flex items-center justify-center relative px-6">
           <button
@@ -69,7 +88,7 @@ export default function Sidebar() {
             <Bars3Icon className="h-8 w-8" />
           </button>
 
-          <Link to="/home" onClick={closeMobileMenu}>
+          <Link to="/home" onClick={closeAll}>
             <img
               src="/logo.webp"
               alt="Prodesk"
@@ -79,11 +98,11 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* ================= MOBILE FULLSCREEN MENU ================= */}
+      {/* ================= MOBILE MENU ================= */}
       {mobileOpen && (
         <div className="fixed inset-0 bg-black z-[100] text-white overflow-y-auto lg:hidden">
           <nav className="min-h-screen flex flex-col items-center justify-center space-y-8 py-20 text-lg tracking-widest font-bold">
-            <Link to="/home" onClick={closeMobileMenu}>HOME</Link>
+            <Link to="/home" onClick={closeAll}>HOME</Link>
 
             {["about", "products", "technologies"].map((menu) => (
               <div key={menu} className="text-center w-full px-10">
@@ -105,7 +124,7 @@ export default function Sidebar() {
                       <Link
                         key={item.name}
                         to={item.href}
-                        onClick={closeMobileMenu}
+                        onClick={closeAll}
                         className="block hover:text-white"
                       >
                         {item.name}
@@ -116,15 +135,15 @@ export default function Sidebar() {
               </div>
             ))}
 
-          <Link to="/insights">INSIGHTS</Link> 
-           <Link to="/success-stories" onClick={closeMobileMenu} className="hover:text-gray-400 uppercase">SUCCESS STORIES</Link>
-           <Link to="/careers" onClick={closeMobileMenu} className="hover:text-gray-400 uppercase">CAREERS</Link> 
-           <Link to="/contact">CONTACT</Link>
+            <Link to="/insights">INSIGHTS</Link>
+            <Link to="/success-stories">SUCCESS STORIES</Link>
+            <Link to="/careers">CAREERS</Link>
+            <Link to="/contact">CONTACT</Link>
           </nav>
 
           <button
             className="fixed bottom-10 left-1/2 -translate-x-1/2"
-            onClick={closeMobileMenu}
+            onClick={closeAll}
           >
             <XMarkIcon className="h-8 w-8 text-gray-400" />
           </button>
@@ -133,9 +152,7 @@ export default function Sidebar() {
 
       {/* ================= DESKTOP SIDEBAR ================= */}
       <div className="hidden lg:flex fixed left-0 top-0 h-screen w-80 bg-black text-white z-50 flex-col border-r border-gray-900">
-        
-        {/* LOGO (FIXED) */}
-        <div className="px-8 py-10 flex justify-center shrink-0">
+        <div className="px-8 py-10 flex justify-center">
           <Link to="/home">
             <img
               src="/logo.webp"
@@ -145,7 +162,6 @@ export default function Sidebar() {
           </Link>
         </div>
 
-        {/* SCROLLABLE MENU */}
         <nav className="flex-1 overflow-y-auto px-8 space-y-6 pb-10 tracking-widest text-sm">
           <Link to="/home" className="block text-gray-400 hover:text-white">
             HOME
@@ -166,23 +182,30 @@ export default function Sidebar() {
             </button>
           ))}
 
-          {/* EXTRA ITEMS (ADDED) */}
-          <Link to="/insights" className="block text-gray-400 hover:text-white"> 
-  INSIGHTS
-</Link>
-         <Link to="/success-stories" className="block text-gray-400 hover:text-white uppercase transition-colors"> 
-  SUCCESS STORIES
-</Link>
-          <Link to="/careers" className="block text-gray-400 hover:text-white uppercase transition-colors">
-  CAREERS
-</Link>
-         <Link to="/contact" className="block text-gray-400 hover:text-white">
-      CONTACT
-    </Link>
+          <Link to="/insights" className="block text-gray-400 hover:text-white">
+            INSIGHTS
+          </Link>
+          <Link to="/success-stories" className="block text-gray-400 hover:text-white">
+            SUCCESS STORIES
+          </Link>
+          <Link to="/careers" className="block text-gray-400 hover:text-white">
+            CAREERS
+          </Link>
+          <Link to="/contact" className="block text-gray-400 hover:text-white">
+            CONTACT
+          </Link>
         </nav>
       </div>
 
-      {/* ================= DESKTOP SUBMENU PANEL ================= */}
+      {/* ================= CLICK OUTSIDE OVERLAY ================= */}
+      {activeMenu && (
+        <div
+          className="hidden lg:block fixed inset-0 bg-black/40 z-30"
+          onClick={() => setActiveMenu(null)}
+        />
+      )}
+
+      {/* ================= DESKTOP SUBMENU ================= */}
       <div
         className={`hidden lg:block fixed top-0 left-80 h-screen w-80 bg-[#1a1a1a] z-40 transition-transform duration-300 ${
           activeMenu ? "translate-x-0" : "-translate-x-full"
