@@ -19,6 +19,10 @@ import MobileTechnologies from './pages/technologies/MobileTechnologies';
 import DataAnalytics from './pages/technologies/DataAnalytics';
 import Iot from './pages/technologies/Iot';
 import CyberSecurity from './pages/technologies/CyberSecurity';
+import JavaEnterprise from './pages/technologies/JavaEnterprise';
+import Blockchain from './pages/technologies/Blockchain';
+import QualityEngineering from './pages/technologies/QualityEngineering';
+import RoboticAutomation from './pages/technologies/RoboticAutomation';
 function App() {
   return (
     
@@ -51,6 +55,10 @@ function App() {
             <Route path="/technologies/data-analytics" element={<DataAnalytics />} />
             <Route path="/technologies/internet-of-things" element={<Iot />} />
             <Route path="/technologies/cybersecurity" element={<CyberSecurity />} />
+            <Route path="/technologies/java-enterprise" element={<JavaEnterprise />} />
+            <Route path="/technologies/blockchain-web3" element={<Blockchain />} />
+            <Route path="/technologies/quality-engineering" element={<QualityEngineering />} />
+            <Route path="/technologies/robotic-automation" element={<RoboticAutomation />} />
           </Routes>
         </main>
 
