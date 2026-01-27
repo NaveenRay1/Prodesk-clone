@@ -8,6 +8,7 @@ import WhoWeAre from './pages/WhoWeAre';
 import WhatWeDo from './pages/WhatWeDo';
 import Insights from './pages/Insights';
 import SuccessStories from './pages/SuccessStories';
+import Careers from './pages/Careers';
 function App() {
   return (
     <Router>
@@ -28,6 +29,7 @@ function App() {
             <Route path="/what-we-do-1" element={<WhatWeDo />} />
             <Route path="/insights" element={<Insights />} />
             <Route path="/success-stories" element={<SuccessStories />} />
+            <Route path="/careers" element={<Careers />} />
           </Routes>
         </main>
 

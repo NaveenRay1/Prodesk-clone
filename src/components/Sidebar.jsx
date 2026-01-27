@@ -59,7 +59,7 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* ================= MOBILE TOP BAR ================= */}
+      {/*                  MOBILE TOP BAR                  */}
       <div className="lg:hidden fixed top-0 left-0 w-full bg-black text-white z-50 border-b border-gray-800">
         <div className="h-32 flex items-center justify-center relative px-6">
           <button
@@ -118,7 +118,7 @@ export default function Sidebar() {
 
           <Link to="/insights">INSIGHTS</Link> 
            <Link to="/success-stories" onClick={closeMobileMenu} className="hover:text-gray-400 uppercase">SUCCESS STORIES</Link>
-            <Link to="#">CAREERS</Link>
+           <Link to="/careers" onClick={closeMobileMenu} className="hover:text-gray-400 uppercase">CAREERS</Link> 
             <Link to="#">CONTACT</Link>
           </nav>
 
@@ -167,15 +167,15 @@ export default function Sidebar() {
           ))}
 
           {/* EXTRA ITEMS (ADDED) */}
-          <Link to="/insights" className="block text-gray-400 hover:text-white"> {/* <--- UPDATED */}
+          <Link to="/insights" className="block text-gray-400 hover:text-white"> 
   INSIGHTS
 </Link>
-         <Link to="/success-stories" className="block text-gray-400 hover:text-white uppercase transition-colors"> {/* <--- UPDATED */}
+         <Link to="/success-stories" className="block text-gray-400 hover:text-white uppercase transition-colors"> 
   SUCCESS STORIES
 </Link>
-          <Link to="#" className="block text-gray-400 hover:text-white">
-            CAREERS
-          </Link>
+          <Link to="/careers" className="block text-gray-400 hover:text-white uppercase transition-colors">
+  CAREERS
+</Link>
           <Link to="#" className="block text-gray-400 hover:text-white">
             CONTACT
           </Link>
