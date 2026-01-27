@@ -1,13 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const links = [
-  "ABOUT US", "AI & ML", "CLOUD COMPUTING & DEVOPS", "PYTHON & BACKEND",
-  "REACT & MODERN FRONTEND", "MOBILE TECHNOLOGIES", "DATA ANALYTICS",
-  "CYBERSECURITY", "JAVA ENTERPRISE SOLUTIONS", "BLOCKCHAIN & WEB3",
-  "AUTOMATED TESTING", "ROBOTIC AUTOMATION", "ENTERPRISE CRM SOLUTIONS",
-  "ERP & SUPPLY CHAIN", "UI/UX DESIGN STUDIO", "E-COMMERCE & RETAIL",
-  "IT INFRASTRUCTURE", "API INTEGRATION", "INSIGHTS", "SUCCESS STORIES",
-  "CAREERS", "CONTACT"
+  { name: "ABOUT US", path: "/about-us-1" },
+  { name: "AI & ML", path: "/technologies/ai-ml" },
+  { name: "CLOUD COMPUTING & DEVOPS", path: "/technologies/cloud-devops" },
+  { name: "PYTHON & BACKEND", path: "/technologies/python-backend" },
+  { name: "REACT & MODERN FRONTEND", path: "/technologies/react-frontend" },
+  { name: "MOBILE TECHNOLOGIES", path: "/technologies/mobile-technologies" },
+  { name: "DATA ANALYTICS", path: "/technologies/data-analytics" },
+  { name: "CYBERSECURITY", path: "/technologies/cybersecurity" },
+  { name: "JAVA ENTERPRISE SOLUTIONS", path: "/technologies/java-enterprise" },
+  { name: "BLOCKCHAIN & WEB3", path: "/technologies/blockchain-web3" },
+  { name: "AUTOMATED TESTING", path: "/technologies/quality-engineering" },
+  { name: "ROBOTIC AUTOMATION", path: "/technologies/robotic-automation" },
+  { name: "ENTERPRISE CRM SOLUTIONS", path: "/technologies/crm-solutions" },
+  { name: "ERP & SUPPLY CHAIN", path: "/technologies/erp-supply-chain" },
+  { name: "UI/UX DESIGN STUDIO", path: "/technologies/ui-ux-design" },
+  { name: "E-COMMERCE & RETAIL", path: "/technologies/ecommerce-retail" },
+  { name: "IT INFRASTRUCTURE", path: "/technologies/it-infrastructure" },
+  { name: "API INTEGRATION", path: "/technologies/api-integration" },
+  { name: "INSIGHTS", path: "/insights" },
+  { name: "SUCCESS STORIES", path: "/success-stories" },
+  { name: "CAREERS", path: "/careers" },
+  { name: "CONTACT", path: "/contact" }
 ];
 
 export default function Footer() {
@@ -19,13 +35,13 @@ export default function Footer() {
         <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3">
           {links.map((link, index) => (
             <li key={index}>
-              <a
-                href="#"
+              <Link
+                to={link.path}
                 className="text-[15px] uppercase tracking-[0.14em] text-gray-300 hover:text-white transition"
                 style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
               >
-                {link}
-              </a>
+                {link.name}
+              </Link>
             </li>
           ))}
         </ul>

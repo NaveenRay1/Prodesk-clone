@@ -20,7 +20,7 @@ const subMenus = {
 
   products: [
     { name: "Software Development", href: "#" },
-    { name: "Web Development", href:"/technologies/cloud-devops" },
+    { name: "Web Development", href: "/technologies/cloud-devops" },
     { name: "Mobile App Development", href: "#" },
     { name: "CRM Solutions", href: "#" },
     { name: "HRM Software", href: "#" },
@@ -51,7 +51,7 @@ const subMenus = {
     { name: "ERP & Supply Chain", href: "/technologies/erp-supply-chain" },
     { name: "UI/UX Design Studio", href: "/technologies/ui-ux-design" },
     { name: "E-Commerce & Retail", href: "/technologies/ecommerce-retail" },
-    { name: "IT Infrastructure", href: "/technologies/it-infrastructure"},
+    { name: "IT Infrastructure", href: "/technologies/it-infrastructure" },
     { name: "Digital Marketing", href: "/technologies/digital-marketing" },
     { name: "API Integration", href: "/technologies/internet-of-things" },
   ],
@@ -98,57 +98,64 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* ================= MOBILE MENU ================= */}
-      {mobileOpen && (
-        <div className="fixed inset-0 bg-black z-[100] text-white overflow-y-auto lg:hidden">
-          <nav className="min-h-screen flex flex-col items-center justify-center space-y-8 py-20 text-lg tracking-widest font-bold">
-            <Link to="/home" onClick={closeAll}>HOME</Link>
+      {/* ================= MOBILE MENU (ANIMATED) ================= */}
+      <div
+        className={`fixed inset-0 z-[100] bg-black text-white lg:hidden
+        transform transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
+        ${mobileOpen ? "translate-x-0" : "-translate-x-full"}`}
+      >
+        <nav
+          className={`min-h-screen flex flex-col items-center justify-center space-y-8 py-20
+          text-lg tracking-widest font-bold transition-opacity duration-300
+          ${mobileOpen ? "opacity-100" : "opacity-0"}`}
+        >
+          <Link to="/home" onClick={closeAll}>HOME</Link>
 
-            {["about", "products", "technologies"].map((menu) => (
-              <div key={menu} className="text-center w-full px-10">
-                <button
-                  onClick={() => toggleMenu(menu)}
-                  className="flex items-center justify-center gap-2 mx-auto uppercase"
-                >
-                  {menu}
-                  <ChevronDownIcon
-                    className={`h-4 w-4 transition-transform ${
-                      activeMenu === menu ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
+          {["about", "products", "technologies"].map((menu) => (
+            <div key={menu} className="text-center w-full px-10">
+              <button
+                onClick={() => toggleMenu(menu)}
+                className="flex items-center justify-center gap-2 mx-auto uppercase"
+              >
+                {menu}
+                <ChevronDownIcon
+                  className={`h-4 w-4 transition-transform ${
+                    activeMenu === menu ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
 
-                {activeMenu === menu && (
-                  <div className="mt-6 space-y-4 text-sm text-gray-400">
-                    {subMenus[menu].map((item) => (
-                      <Link
-                        key={item.name}
-                        to={item.href}
-                        onClick={closeAll}
-                        className="block hover:text-white"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+              {activeMenu === menu && (
+                <div className="mt-6 space-y-4 text-sm text-gray-400">
+                  {subMenus[menu].map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      onClick={closeAll}
+                      className="block hover:text-white"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
 
-            <Link to="/insights">INSIGHTS</Link>
-            <Link to="/success-stories">SUCCESS STORIES</Link>
-            <Link to="/careers">CAREERS</Link>
-            <Link to="/contact">CONTACT</Link>
-          </nav>
+          {/* ✅ FIXED LINKS */}
+          <Link to="/insights" onClick={closeAll}>INSIGHTS</Link>
+          <Link to="/success-stories" onClick={closeAll}>SUCCESS STORIES</Link>
+          <Link to="/careers" onClick={closeAll}>CAREERS</Link>
+          <Link to="/contact" onClick={closeAll}>CONTACT</Link>
+        </nav>
 
-          <button
-            className="fixed bottom-10 left-1/2 -translate-x-1/2"
-            onClick={closeAll}
-          >
-            <XMarkIcon className="h-8 w-8 text-gray-400" />
-          </button>
-        </div>
-      )}
+        <button
+          className="fixed bottom-10 left-1/2 -translate-x-1/2"
+          onClick={closeAll}
+        >
+          <XMarkIcon className="h-8 w-8 text-gray-400 hover:scale-110 transition-transform duration-300" />
+        </button>
+      </div>
 
       {/* ================= DESKTOP SIDEBAR ================= */}
       <div className="hidden lg:flex fixed left-0 top-0 h-screen w-80 bg-black text-white z-50 flex-col border-r border-gray-900">
@@ -197,7 +204,7 @@ export default function Sidebar() {
         </nav>
       </div>
 
-      {/* ================= CLICK OUTSIDE OVERLAY ================= */}
+      {/* ================= DESKTOP OVERLAY ================= */}
       {activeMenu && (
         <div
           className="hidden lg:block fixed inset-0 bg-black/40 z-30"
@@ -207,9 +214,9 @@ export default function Sidebar() {
 
       {/* ================= DESKTOP SUBMENU ================= */}
       <div
-        className={`hidden lg:block fixed top-0 left-80 h-screen w-80 bg-[#1a1a1a] z-40 transition-transform duration-300 ${
-          activeMenu ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`hidden lg:block fixed top-0 left-80 h-screen w-80 bg-[#1a1a1a] z-40
+        transition-transform duration-300
+        ${activeMenu ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="h-full overflow-y-auto p-8">
           {activeMenu &&
