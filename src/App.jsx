@@ -10,8 +10,14 @@ import Insights from './pages/Insights';
 import SuccessStories from './pages/SuccessStories';
 import Careers from './pages/Careers';
 import Contact from './pages/Contact';
+import AiMl from './pages/technologies/AiMl';
+import CloudDevOps from './pages/technologies/CloudDevOps';
+import ScrollToTop from "./components/ScrollToTop";
+import PythonBackend from './pages/technologies/PythonBackend';
+import ReactFrontend from './pages/technologies/ReactFrontend';
 function App() {
   return (
+    
     <Router>
       <div className="bg-black min-h-screen flex flex-col lg:flex-row"> {/* Changed flex-direction */}
         
@@ -20,6 +26,7 @@ function App() {
         {/* Main Content */}
         {/* Added 'pt-20' for mobile top bar spacing, removed it on desktop 'lg:pt-0' */}
         <main className="lg:ml-80 flex-1 relative z-0 bg-white pt-20 lg:pt-0">
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Navigate to="/home" replace />} />
             <Route path="/home" element={<Home />} />
@@ -32,6 +39,10 @@ function App() {
             <Route path="/success-stories" element={<SuccessStories />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/technologies/ai-ml" element={<AiMl />} />
+            <Route path="/technologies/cloud-devops" element={<CloudDevOps />} />
+            <Route path="/technologies/python-backend" element={<PythonBackend />} />
+            <Route path="/technologies/react-frontend" element={<ReactFrontend />} />
           </Routes>
         </main>
 

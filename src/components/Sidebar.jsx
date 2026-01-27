@@ -20,7 +20,7 @@ const subMenus = {
 
   products: [
     { name: "Software Development", href: "#" },
-    { name: "Web Development", href: "#" },
+    { name: "Web Development", href:"/technologies/cloud-devops" },
     { name: "Mobile App Development", href: "#" },
     { name: "CRM Solutions", href: "#" },
     { name: "HRM Software", href: "#" },
@@ -35,10 +35,10 @@ const subMenus = {
   ],
 
   technologies: [
-    { name: "AI & ML", href: "#" },
+    { name: "AI & ML", href: "/technologies/ai-ml" },
     { name: "Cloud Computing & DevOps", href: "#" },
-    { name: "Python & Backend", href: "#" },
-    { name: "React & Modern Frontend", href: "#" },
+    { name: "Python & Backend", href: "/technologies/python-backend" },
+    { name: "React & Modern Frontend", href: "/technologies/react-frontend" },
     { name: "Mobile Technologies", href: "#" },
     { name: "Data Analytics", href: "#" },
     { name: "Internet of Things (IoT)", href: "#" },
