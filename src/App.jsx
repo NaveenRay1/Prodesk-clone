@@ -1,19 +1,32 @@
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
-import Hero from './components/Hero';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="bg-black min-h-screen">
-      
-      <Sidebar />
+    <Router>
+      <div className="bg-black min-h-screen flex">
+        
+        {/* The Sidebar stays visible on ALL pages */}
+        <Sidebar />
 
-      {/* Main Content */}
-      {/* ml-80 pushes this content to the right, exactly the width of the Sidebar */}
-      <main className="ml-80 w-[calc(100%-20rem)] relative z-0">
-        <Hero />
-      </main>
+        {/* The Main Content Area changes based on the URL */}
+        <main className="lg:ml-80 flex-1 relative z-0 bg-white">
+          <Routes>
+            {/* Redirect root "/" to "/home" */}
+            <Route path="/" element={<Navigate to="/home" replace />} />
+            
+            {/* The Home Page Route */}
+            <Route path="/home" element={<Home />} />
+            
+            {/* Future pages can be added here, e.g.:
+                <Route path="/about-us" element={<About />} /> 
+            */}
+          </Routes>
+        </main>
 
-    </div>
+      </div>
+    </Router>
   )
 }
 
