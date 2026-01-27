@@ -36,7 +36,7 @@ const subMenus = {
 
   technologies: [
     { name: "AI & ML", href: "/technologies/ai-ml" },
-    { name: "Cloud Computing & DevOps", href: "#" },
+    { name: "Cloud Computing & DevOps", href: "/technologies/cloud-devops" },
     { name: "Python & Backend", href: "/technologies/python-backend" },
     { name: "React & Modern Frontend", href: "/technologies/react-frontend" },
     { name: "Mobile Technologies", href: "/technologies/mobile-technologies" },
@@ -47,13 +47,13 @@ const subMenus = {
     { name: "Blockchain & Web3", href: "/technologies/blockchain-web3" },
     { name: "Automated Testing", href: "/technologies/quality-engineering" },
     { name: "Robotic Automation", href: "/technologies/robotic-automation" },
-    { name: "Enterprise CRM Solutions", href: "#" },
-    { name: "ERP & Supply Chain", href: "#" },
-    { name: "UI/UX Design Studio", href: "#" },
-    { name: "E-Commerce & Retail", href: "#" },
-    { name: "IT Infrastructure", href: "#" },
-    { name: "Digital Marketing", href: "#" },
-    { name: "API Integration", href: "#" },
+    { name: "Enterprise CRM Solutions", href: "/technologies/crm-solutions" },
+    { name: "ERP & Supply Chain", href: "/technologies/erp-supply-chain" },
+    { name: "UI/UX Design Studio", href: "/technologies/ui-ux-design" },
+    { name: "E-Commerce & Retail", href: "/technologies/ecommerce-retail" },
+    { name: "IT Infrastructure", href: "/technologies/it-infrastructure"},
+    { name: "Digital Marketing", href: "/technologies/digital-marketing" },
+    { name: "API Integration", href: "/technologies/internet-of-things" },
   ],
 };
 

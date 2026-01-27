@@ -23,6 +23,13 @@ import JavaEnterprise from './pages/technologies/JavaEnterprise';
 import Blockchain from './pages/technologies/Blockchain';
 import QualityEngineering from './pages/technologies/QualityEngineering';
 import RoboticAutomation from './pages/technologies/RoboticAutomation';
+import EnterpriseCrm from './pages/technologies/EnterpriseCrm';
+import ErpSupplyChain from './pages/technologies/ErpSupplyChain';
+import UiUxDesign from './pages/technologies/UiUxDesign';
+import EcommerceRetail from './pages/technologies/EcommerceRetail';
+import ItInfrastructure from './pages/technologies/ItInfrastructure';
+import DigitalMarketing from './pages/technologies/DigitalMarketing';
+import ApiIntegration from './pages/technologies/ApiIntegration';
 function App() {
   return (
     
@@ -59,6 +66,14 @@ function App() {
             <Route path="/technologies/blockchain-web3" element={<Blockchain />} />
             <Route path="/technologies/quality-engineering" element={<QualityEngineering />} />
             <Route path="/technologies/robotic-automation" element={<RoboticAutomation />} />
+            <Route path="/technologies/crm-solutions" element={<EnterpriseCrm />} />
+            <Route path="/technologies/erp-supply-chain" element={<ErpSupplyChain />} />
+            <Route path="/technologies/ui-ux-design" element={<UiUxDesign />} />
+            <Route path="/technologies/ecommerce-retail" element={<EcommerceRetail />} />
+            <Route path="/technologies/it-infrastructure" element={<ItInfrastructure />} />
+            <Route path="/technologies/digital-marketing" element={<DigitalMarketing />} />
+            <Route path="/technologies/api-integration" element={<ApiIntegration />} />
+            
           </Routes>
         </main>
 
