@@ -4,25 +4,28 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Values from './pages/Values';
 import Vision from './pages/Vision';
+import WhoWeAre from './pages/WhoWeAre';
+import WhatWeDo from './pages/WhatWeDo';
+import Insights from './pages/Insights';
 function App() {
   return (
     <Router>
-      <div className="bg-black min-h-screen flex">
+      <div className="bg-black min-h-screen flex flex-col lg:flex-row"> {/* Changed flex-direction */}
         
-        {/* The Sidebar stays visible on ALL pages */}
         <Sidebar />
 
-        {/* The Main Content Area changes based on the URL */}
-        <main className="lg:ml-80 flex-1 relative z-0 bg-white">
+        {/* Main Content */}
+        {/* Added 'pt-20' for mobile top bar spacing, removed it on desktop 'lg:pt-0' */}
+        <main className="lg:ml-80 flex-1 relative z-0 bg-white pt-20 lg:pt-0">
           <Routes>
-            {/* Redirect root "/" to "/home" */}
             <Route path="/" element={<Navigate to="/home" replace />} />
-            
-            {/* The Home Page Route */}
             <Route path="/home" element={<Home />} />
-              <Route path="/about-us-1" element={<About />}/>
+            <Route path="/about-us-1" element={<About />} />
             <Route path="/our-values" element={<Values />} />
             <Route path="/our-vision-1" element={<Vision />} />
+            <Route path="/who-we-are-1" element={<WhoWeAre />} />
+            <Route path="/what-we-do-1" element={<WhatWeDo />} />
+            <Route path="/insights" element={<Insights />} />
           </Routes>
         </main>
 
@@ -30,5 +33,4 @@ function App() {
     </Router>
   )
 }
-
 export default App
