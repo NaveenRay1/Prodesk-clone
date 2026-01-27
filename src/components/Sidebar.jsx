@@ -5,9 +5,9 @@ import { ChevronRightIcon } from '@heroicons/react/24/outline';
 // 1. DATA STRUCTURES (Exact lists you provided)
 const subMenus = {
   about: [
-    { name: 'About Us', href: '#' },
-    { name: 'Our Values', href: '#' },
-    { name: 'Our Vision', href: '#' },
+    { name: 'About Us', href: '/about-us-1' },
+    { name: 'Our Values', href: '/our-values' },
+    { name: 'Our Vision', href: '/our-vision-1' },
     { name: 'Who We Are', href: '#' },
     { name: 'What We Do', href: '#' },
   ],

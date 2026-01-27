@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
-
+import About from './pages/About';
+import Values from './pages/Values';
+import Vision from './pages/Vision';
 function App() {
   return (
     <Router>
@@ -18,10 +20,9 @@ function App() {
             
             {/* The Home Page Route */}
             <Route path="/home" element={<Home />} />
-            
-            {/* Future pages can be added here, e.g.:
-                <Route path="/about-us" element={<About />} /> 
-            */}
+              <Route path="/about-us-1" element={<About />}/>
+            <Route path="/our-values" element={<Values />} />
+            <Route path="/our-vision-1" element={<Vision />} />
           </Routes>
         </main>
 
