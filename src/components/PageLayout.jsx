@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from './Footer';
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // This component defines the standard structure for "About," "Values," etc.
 // It accepts props for the varying content.
@@ -10,6 +10,17 @@ export default function PageLayout({
   sectionHeading, 
   children // 'children' is a special React prop for whatever you put inside the opening/closing tags of this component
 }) {
+  const navigate = useNavigate();
+const location = useLocation();
+
+const handleFindOutMore = () => {
+  if (location.pathname === "/insights") {
+    navigate("/success-stories");
+  } else {
+    navigate("/insights");
+  }
+};
+
   return (
     <div className="bg-white min-h-screen">
       
@@ -40,13 +51,14 @@ export default function PageLayout({
           </h1>
           
           {/* Standard Button */}
-        <Link
-  to="/insights"
+  <button
+  onClick={handleFindOutMore}
   className="inline-block border-2 border-white text-white px-8 py-3 text-sm font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-colors duration-300"
   style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
 >
   Find out more
-</Link>
+</button>
+
 
         </div>
       </section>
