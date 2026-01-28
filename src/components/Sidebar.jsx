@@ -62,6 +62,14 @@ const subMenus = {
 export default function Sidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
+  useEffect(() => {
+  if (mobileOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+}, [mobileOpen]);
+
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -105,11 +113,17 @@ export default function Sidebar() {
         ${mobileOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
 <nav
-  className={`h-full overflow-y-auto flex flex-col items-center
+  className={`fixed inset-0 z-50
+  flex flex-col items-center
   space-y-8 pt-40 pb-24
-  text-lg tracking-widest font-bold transition-opacity duration-300
-  ${mobileOpen ? "opacity-100" : "opacity-0"}`}
+  text-lg tracking-widest font-bold
+  bg-black
+  overflow-y-auto
+  transform transition-transform duration-300 ease-in-out
+  ${mobileOpen ? "translate-y-0" : "-translate-y-full"}
+  `}
 >
+
 
 
           <Link to="/home" onClick={closeAll}>HOME</Link>
