@@ -105,10 +105,12 @@ export default function Sidebar() {
         ${mobileOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         <nav
-          className={`min-h-screen flex flex-col items-center justify-center space-y-8 py-20
-          text-lg tracking-widest font-bold transition-opacity duration-300
-          ${mobileOpen ? "opacity-100" : "opacity-0"}`}
-        >
+  className={`h-full overflow-y-auto flex flex-col items-center
+  space-y-8 py-32 px-6
+  text-lg tracking-widest font-bold transition-opacity duration-300
+  ${mobileOpen ? "opacity-100" : "opacity-0"}`}
+>
+
           <Link to="/home" onClick={closeAll}>HOME</Link>
 
           {["about", "products", "technologies"].map((menu) => (
