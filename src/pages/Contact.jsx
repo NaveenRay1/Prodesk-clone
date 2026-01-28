@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import Footer from '../components/Footer';
 import { Link } from "react-router-dom";
 
 export default function Contact() {
   // Images
+  const [hoursOpen, setHoursOpen] = useState(false);
+
   const sideImage = "/Frontview.webp"; 
   const officeImage = "/officeLoaction.webp";
   
@@ -64,14 +67,50 @@ export default function Contact() {
             </div>
 
             {/* Hours Dropdown Style */}
-            <div className="mt-6 text-sm text-gray-600 border-t border-gray-100 pt-4 w-fit">
-              <div className="flex items-center gap-2 cursor-pointer">
-                 <span>Open today 09:00 am – 05:00 pm</span>
-                 <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                 </svg>
-              </div>
-            </div>
+{/* Hours Dropdown */}
+<div className="mt-6 text-sm text-gray-600 border-t border-gray-100 pt-4 max-w-xs">
+  <button
+    onClick={() => setHoursOpen(!hoursOpen)}
+    className="flex items-center justify-between w-full text-left"
+  >
+    <span className="font-medium">
+      Open today 09:00 am – 05:00 pm
+    </span>
+
+    <svg
+      className={`w-4 h-4 text-gray-400 transition-transform duration-300 ${
+        hoursOpen ? "rotate-180" : ""
+      }`}
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M19 9l-7 7-7-7"
+      />
+    </svg>
+  </button>
+
+  <div
+    className={`overflow-hidden transition-all duration-300 ${
+      hoursOpen ? "max-h-96 mt-4" : "max-h-0"
+    }`}
+  >
+    <ul className="space-y-1">
+      <li>Mon 09:00 am – 05:00 pm</li>
+      <li>Tue 09:00 am – 05:00 pm</li>
+      <li>Wed 09:00 am – 05:00 pm</li>
+      <li>Thu 09:00 am – 05:00 pm</li>
+      <li>Fri 09:00 am – 05:00 pm</li>
+      <li>Sat By Appointment</li>
+      <li>Sun Closed</li>
+    </ul>
+  </div>
+</div>
+
           </div>
         </div>
 

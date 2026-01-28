@@ -168,18 +168,25 @@ export default function Careers() {
         </div>
       </div>
 
-      {/* CTA */}
-      <div className="mt-12 pt-8 border-t border-gray-100">
-        <p>
-          <strong className="text-gray-800 font-semibold block uppercase tracking-wide mb-2">
-            READY TO JOIN US?
-          </strong>
-          Don't wait for the perfect opportunity. Create it.
-        </p>
-        <p className="mt-4">
-          Send your resume and portfolio to: <strong className="text-gray-800 font-semibold">info@prodesk.in</strong>
-        </p>
-      </div>
+     {/* CTA */}
+<div className="mt-12 pt-8 border-t border-gray-100">
+  <p>
+    <strong className="text-gray-800 font-semibold block uppercase tracking-wide mb-2">
+      READY TO JOIN US?
+    </strong>
+    Don't wait for the perfect opportunity. Create it.
+  </p>
+
+  <p className="mt-4">
+    Send your resume and portfolio to:{" "}
+    <a
+      href="mailto:info@prodesk.in"
+      className="text-gray-800 font-semibold hover:text-[#4F786D] transition-colors"
+    >
+      info@prodesk.in
+    </a>
+  </p>
+</div>
 
     </PageLayout>
   );
