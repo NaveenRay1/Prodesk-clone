@@ -49,7 +49,7 @@ export default function OurStory() {
             {/* Button */}
             <div className="mt-14">
               <a
-                href="/success-stories-1"
+              href="/success-stories"
                 className="inline-block border border-black text-black px-10 py-4 text-xs font-bold tracking-[0.2em] uppercase hover:bg-black hover:text-white transition-colors duration-300"
                 style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
               >

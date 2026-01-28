@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const cards = [
   {
@@ -37,7 +38,7 @@ export default function WelcomeSection() {
         {cards.map((card, index) => (
           <div key={index} className="flex flex-col items-center text-center">
             
-            {/* Image Container */}
+            {/* Image */}
             <div className="w-full h-[400px] mb-8 overflow-hidden">
               <img 
                 src={card.image} 
@@ -61,12 +62,13 @@ export default function WelcomeSection() {
 
             {/* Button */}
             <div className="mt-auto">
-              <a 
-                href="#" 
-                className="inline-block border border-gray-900 text-gray-900 px-8 py-3 text-sm font-bold tracking-widest uppercase hover:bg-gray-900 hover:text-white transition-colors duration-300"
+              <Link
+                to="/about-us-1"
+                className="inline-block border border-gray-900 text-gray-900 px-8 py-3 text-sm font-bold tracking-widest uppercase
+                           hover:bg-gray-900 hover:text-white transition-colors duration-300"
               >
                 Learn More
-              </a>
+              </Link>
             </div>
 
           </div>

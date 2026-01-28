@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Hero() {
   return (
     <div className="relative h-screen w-full bg-black text-white flex items-center justify-center overflow-hidden">
@@ -54,21 +56,22 @@ export default function Hero() {
         </p>
 
         {/* Button */}
-        <a 
-          href="#contact" 
-          className="inline-block border border-white text-white hover:bg-white hover:text-black transition-colors duration-300"
-          style={{
-            fontFamily: "Helvetica, Arial, sans-serif",
-            fontSize: '12px',
-            letterSpacing: '2px', 
-            padding: '16px 32px', 
-            fontWeight: 'bold',
-            textTransform: 'uppercase',
-            textDecoration: 'none'
-          }}
-        >
-          Start Your Transformation
-        </a>
+<Link
+  to="/contact"
+  className="inline-block border border-white text-white hover:bg-white hover:text-black transition-colors duration-300"
+  style={{
+    fontFamily: "Helvetica, Arial, sans-serif",
+    fontSize: '12px',
+    letterSpacing: '2px',
+    padding: '16px 32px',
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    textDecoration: 'none'
+  }}
+>
+  Start Your Transformation
+</Link>
+
 
       </div>
     </div>
