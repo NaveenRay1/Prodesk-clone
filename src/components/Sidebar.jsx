@@ -104,12 +104,13 @@ export default function Sidebar() {
         transform transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
         ${mobileOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
-        <nav
+<nav
   className={`h-full overflow-y-auto flex flex-col items-center
-  space-y-8 py-32 px-6
+  space-y-8 pt-40 pb-24
   text-lg tracking-widest font-bold transition-opacity duration-300
   ${mobileOpen ? "opacity-100" : "opacity-0"}`}
 >
+
 
           <Link to="/home" onClick={closeAll}>HOME</Link>
 
